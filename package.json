@@ -1,0 +1,20 @@
+{
+	"name": "meshcore-bot",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"preinstall": "test -d meshcore.js || git clone https://github.com/meshcore-dev/meshcore.js.git meshcore.js",
+		"build": "esbuild meshcore-bot.js --bundle --outfile=bundle.js --format=esm --minify --legal-comments=none",
+		"build:watch": "esbuild meshcore-bot.js --bundle --outfile=bundle.js --format=esm --minify --legal-comments=none --watch",
+		"server": "http-server . --cors"
+	},
+	"dependencies": {
+		"@noble/curves": "^1.8.1",
+		"serialport": "^13.0.0",
+		"http-server": "^14.1.1"
+	},
+	"devDependencies": {
+		"esbuild": "^0.25.11"
+	}
+}
