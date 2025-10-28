@@ -1,7 +1,6 @@
 import Constants from "./meshcore.js/src/constants.js";
 import WebBleConnection from "./meshcore.js/src/connection/web_ble_connection.js";
 
-
 const connectButton = document.getElementById('connect');
 const statusContainer = document.getElementById('status');
 
