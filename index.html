@@ -14,6 +14,20 @@
     <h1>Meshcore Bot</h1>
     <button id="connect">Connect Meshcore Device</button>
     <div id="status"></div>
+
+    <script>
+        (() => {
+            if (!('EventSource' in window)) {
+                return;
+            }
+
+            const esbuild = new EventSource('/esbuild');
+            esbuild.addEventListener('change', () => location.reload());
+            esbuild.addEventListener('error', () => {
+                esbuild.close();
+            });
+        })();
+    </script>
 </body>
 
 </html>

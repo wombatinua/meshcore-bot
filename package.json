@@ -7,12 +7,12 @@
 		"preinstall": "test -d meshcore.js || git clone https://github.com/meshcore-dev/meshcore.js.git meshcore.js",
 		"build": "esbuild meshcore-bot.js --bundle --outdir=. --entry-names=bundle --format=esm --minify --legal-comments=none --loader:.css=css",
 		"build:watch": "esbuild meshcore-bot.js --bundle --outdir=. --entry-names=bundle --format=esm --minify --legal-comments=none --loader:.css=css --watch",
-		"server": "http-server . --cors"
+		"server": "esbuild meshcore-bot.js --bundle --outdir=. --entry-names=bundle --format=esm --minify --legal-comments=none --loader:.css=css --servedir=. --serve=localhost:8000",
+		"server:watch": "esbuild meshcore-bot.js --bundle --outdir=. --entry-names=bundle --format=esm --minify --legal-comments=none --loader:.css=css --servedir=. --serve=localhost:8000 --watch=forever"
 	},
 	"dependencies": {
 		"@noble/curves": "^1.8.1",
-		"serialport": "^13.0.0",
-		"http-server": "^14.1.1"
+		"serialport": "^13.0.0"
 	},
 	"devDependencies": {
 		"esbuild": "^0.25.11"

@@ -24,14 +24,15 @@ git clone https://github.com/wombatinua/meshcore-bot.git
 cd meshcore-bot
 npm install
 npm run build
-npm run server
+npm run server:watch
 ```
 
-After the local server starts, open http://127.0.0.1:8080 in a Web Bluetooth capable browser.
+After the local server starts, open http://127.0.0.1:8000 in a Web Bluetooth capable browser. While the dev server is running the UI will auto-reload when esbuild rebuilds.
 
 ## Available npm actions
 
 - `npm install` — Install build dependencies
-- `npm run build` – Bundle `meshcore-bot.js` with esbuild, producing a minified `bundle.js`
-- `npm run build:watch` – Bundle `meshcore-bot.js` with esbuild, producing a minified `bundle.js` whenever sources change
-- `npm run server` – Serve project directory with `http-server` (CORS enabled)
+- `npm run build` – Bundle `meshcore-bot.js` (and CSS) with esbuild, producing minified `bundle.js` and `bundle.css`
+- `npm run build:watch` – Same as `build`, but rebuilds whenever sources change
+- `npm run server` – Run esbuild’s development server on http://127.0.0.1:8000
+- `npm run server:watch` – Start the development server with persistent watch mode and hot reload
