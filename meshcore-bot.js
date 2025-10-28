@@ -1,3 +1,4 @@
+import "./meshcore-bot.css";
 import Constants from "./meshcore.js/src/constants.js";
 import WebBleConnection from "./meshcore.js/src/connection/web_ble_connection.js";
 
